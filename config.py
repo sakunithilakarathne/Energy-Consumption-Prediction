@@ -6,9 +6,16 @@ ARTIFACTS_DIR = os.path.join(BASE_DIR, "artifacts")
 DATA_DIR = os.path.join(BASE_DIR, "data")
 
 RAW_DATA_DIR = os.path.join(DATA_DIR, "raw")
-PROCESSED_DATA_DIR = os.path.join(BASE_DIR, "processed")
+PROCESSED_DATA_DIR = os.path.join(DATA_DIR, "processed")
 RAW_DATASET = os.path.join(RAW_DATA_DIR, "PJME_hourly.csv")
+PROCESSED_DATASET = os.path.join(PROCESSED_DATA_DIR, "processed_PJME.csv")
 
 TRAIN_PATH = os.path.join(ARTIFACTS_DIR, "train.csv")
 TEST_PATH = os.path.join(ARTIFACTS_DIR, "test.csv")
 SCALER_PATH = os.path.join(ARTIFACTS_DIR, "scaler.pkl")
+
+TRAIN_PARQUET = os.path.join(ARTIFACTS_DIR, "train.parquet")
+TEST_PARQUET = os.path.join(ARTIFACTS_DIR, "test.parquet")
+
+PROPHET_BASELINE_MODEL = os.path.join(ARTIFACTS_DIR,"baseline_prophet_model.pkl")
+LSTM_BASELINE_MODEL = os.path.join(ARTIFACTS_DIR,"baseline_lstm_model.h5")

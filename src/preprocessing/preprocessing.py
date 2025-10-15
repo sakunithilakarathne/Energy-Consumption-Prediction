@@ -5,7 +5,7 @@ import wandb
 from sklearn.preprocessing import StandardScaler
 from datetime import datetime
 import os
-from config import ARTIFACTS_DIR, TRAIN_PATH, TEST_PATH, SCALER_PATH, RAW_DATASET
+from config import ARTIFACTS_DIR, TRAIN_PATH, TEST_PATH, SCALER_PATH, PROCESSED_DATASET
 
 def preprocess_time_series(
     df: pd.DataFrame,
@@ -77,6 +77,9 @@ def preprocess_time_series(
     df['roll_mean_168'] = df[target_col].shift(1).rolling(window=168).mean()
 
     df = df.dropna()
+
+    # Savve processed dataset
+    df.to_csv(PROCESSED_DATASET)
 
     # --- Step 7: Train/test split ---
     if verbose: print("🔹 Splitting train/test...")
