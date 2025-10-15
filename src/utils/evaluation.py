@@ -3,7 +3,7 @@ import numpy as np
 
 def evaluate(y_true, y_pred):
     mae = mean_absolute_error(y_true, y_pred)
-    rmse = mean_squared_error(y_true, y_pred, squared=False)
+    rmse = np.sqrt(mean_squared_error(y_true, y_pred))
     mape = np.mean(np.abs((y_true - y_pred) / y_true)) * 100
     r2 = r2_score(y_true, y_pred)
     return dict(MAE=mae, RMSE=rmse, MAPE=mape, R2=r2)
