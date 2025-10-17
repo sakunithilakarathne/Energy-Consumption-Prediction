@@ -59,10 +59,8 @@ def train_chronos():
 
     # ---- Step 5: Forecast ----
     forecasts = predictor.predict(test_ts)
-    forecast_df = forecasts.pd_dataframe()
-
-    # For single series, get values
-    y_pred = forecast_df.iloc[:, 0].values
+    forecast_df = forecasts.reset_index()
+    y_pred = forecast_df["target"].values
     y_true = test_df[target_col].values
 
     # ---- Step 6: Evaluate ----
