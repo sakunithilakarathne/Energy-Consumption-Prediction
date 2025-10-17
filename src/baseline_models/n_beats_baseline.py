@@ -11,7 +11,7 @@ from config import NBEATS_BASELINE_MODEL, ARTIFACTS_DIR
 
 input_chunk_length=168
 output_chunk_length=24
-n_epochs=12
+n_epochs=5
 target_col = "PJME_MW"
 
 
@@ -53,8 +53,8 @@ def train_nbeats():
 
     # Evaluate: align with test
     # Convert to pandas
-    y_true = ts_test.pd_series().values
-    y_pred = pred_ts.pd_series().values
+    y_true = ts_test.values().ravel()
+    y_pred = pred_ts.values().ravel()
 
     # Using your evaluate()
     metrics = evaluate(y_true, y_pred)
