@@ -60,7 +60,7 @@ def train_chronos():
     # ---- Step 5: Forecast ----
     forecasts = predictor.predict(test_ts)
     forecast_df = forecasts.reset_index()
-    y_pred = forecast_df["target"].values
+    y_pred = forecast_df["series_1"].values
     y_true = test_df[target_col].values
 
     # ---- Step 6: Evaluate ----
