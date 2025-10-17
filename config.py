@@ -19,6 +19,8 @@ TEST_PARQUET = os.path.join(ARTIFACTS_DIR, "test.parquet")
 
 PROPHET_BASELINE_MODEL = os.path.join(ARTIFACTS_DIR,"baseline_prophet_model.pkl")
 LSTM_BASELINE_MODEL = os.path.join(ARTIFACTS_DIR,"baseline_lstm_model.h5")
+CHRONOS_BASELINE_MODEL = os.path.join(ARTIFACTS_DIR,"chronos_predictor.pkl")
+NBEATS_BASELINE_MODEL = os.path.join(ARTIFACTS_DIR, "nbeats_model.pth")
 
 BEST_PROPHET_PARAMS = os.path.join(ARTIFACTS_DIR, "best_prophet_params.json")
 BEST_LSTM_PARAMS = os.path.join(ARTIFACTS_DIR, "best_lstm_params.json")
