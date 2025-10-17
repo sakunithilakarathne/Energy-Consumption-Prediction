@@ -28,9 +28,9 @@ def train_chronos():
     
     def to_tsd(df, target_col, series_id="series_1"):
         df2 = df.copy()
-        df2 = df2.reset_index().rename(columns={df.index.name: "timestamp"})
+        df2 = df2.reset_index().rename(columns={df.index.name: "Datetime"})
         df2["item_id"] = series_id
-        df2 = df2[["item_id", "timestamp", target_col]]
+        df2 = df2[["item_id", "Datetime", target_col]]
         df2 = df2.rename(columns={target_col: "target"})
         return TimeSeriesDataFrame.from_data_frame(df2)
 
