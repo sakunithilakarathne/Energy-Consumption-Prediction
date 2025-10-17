@@ -11,7 +11,7 @@ from config import NBEATS_BASELINE_MODEL, ARTIFACTS_DIR
 
 input_chunk_length=168
 output_chunk_length=24
-n_epochs=50
+n_epochs=12
 target_col = "PJME_MW"
 
 
@@ -41,7 +41,8 @@ def train_nbeats():
         input_chunk_length=input_chunk_length,
         output_chunk_length=output_chunk_length,
         n_epochs=n_epochs,
-        random_state=0
+        batch_size = 32,
+        random_state=42
     )
 
     # Train
